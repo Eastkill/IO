@@ -15,10 +15,6 @@ public class ObslugaKursu {
 		this.trasa = model.dajPrzystanki(numerKursu);
 	}
 
-	public int getTrasa() {
-		throw new UnsupportedOperationException();
-	}
-
 	public int getNumerKursu() {
 		return this.numerKursu;
 	}
