@@ -67,10 +67,23 @@ public class Inwentarz {
 		throw new UnsupportedOperationException();
 	}
 
-	public void zaktualizujTrasy(){
+	public void zaktualizujTrase(int id, String text){
+		dao.edytujTrase(id, text);
 
+		CSV csv = new CSV();
+		String nazwa = csv.znajdźNazwęTrasy(text);
+
+		Vector<Przystanek> listaPrzystankow = new Vector<>();
+		for (int idPrzystanku : csv.znajdźPrzystankiTrasy(text)) {
+			listaPrzystankow.add(this.przystanki.get(idPrzystanku));
+		}
+		Trasa zmodyfikowanaTrasa = new Trasa(id, nazwa, listaPrzystankow);
+		trasy.put(id, zmodyfikowanaTrasa);
+
+		Widok.pokaż(getClass().getCanonicalName(), "edytujTrase", true, "Zaktualizowano trasę ID " + id + " w Inwentarzu");
 	}
 	public void dodajTrase(String Text){
+		dao.dodajTrase(Text);
 		CSV csv = new CSV();
 		int numer= csv.znajdźNrTrasy(Text);
 		String nazwa = csv.znajdźNazwęTrasy(Text);
@@ -81,6 +94,5 @@ public class Inwentarz {
 		}
 		trasy.put(numer,new Trasa(numer,nazwa,przystanki));
 		Widok.pokaż(getClass().getCanonicalName(),"dodajTrase",true,"Trasa została dodana do lokalnego inwentarza i przekazana do DAO");
-		dao.dodajTrase(Text);
 	}
 }

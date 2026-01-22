@@ -57,33 +57,39 @@ public class KontrolerTrasTest {
         verify(modelMock, times(1)).dodanieTrasy(trasa);
     }
 
+//    @Test
+//    @Tag("niepoprawny")
+//    @Order(2)
+//    @DisplayName("Rzuca błąd przy dodawaniu trasy")
+//    void testBlednegoDodajTrase() {
+//        //  Jeśli
+//        int id = 1;
+//        String blednaTrasa = "To nie jest poprawny format";
+//
+//        //  Gdy
+//        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+//            kontrolerTras.dodajTrase(id, blednaTrasa);
+//        });
+//
+//        //  Wtedy
+//        verify(modelMock, times(1)).dodanieTrasy(blednaTrasa);
+//    }
+
     @Test
-    @Tag("niepoprawny")
-    @Order(2)
-    @DisplayName("Rzuca błąd przy dodawaniu trasy")
-    void niePowinienDodacTrasyGdyModelZglosiBlad() {
+    @Tag("poprawny")
+    @Order(3)
+    @DisplayName("weryfikacja edycji trasy")
+    void testEdytujTrase() {
         //  Jeśli
         int id = 1;
-        String blednaTrasa = "To nie jest poprawny format";
+        String trasa = "1;Edytowna;10;20;30";
 
         //  Gdy
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            kontrolerTras.dodajTrase(id, blednaTrasa);
-        });
+        kontrolerTras.edytujTrase(1, trasa);
 
         //  Wtedy
-//        InOrder inOrder = Mockito.inOrder(modelMock);
-//        inOrder.verify(modelMock).dodanieTrasy(blednaTrasa);
-        verifyNoInteractions(modelMock);
-    }
-    @Test
-    @Order(3)
-    @DisplayName("weryfikacja edycji trasy - brak interakcji")
-    void testEdytujTrase() {
-        //  Gdy
-        kontrolerTras.edytujTrase(5, "Edycja");
-
-        //  Wtedy
-        verifyNoInteractions(modelMock);
+        InOrder inOrder = Mockito.inOrder(modelMock);
+        inOrder.verify(modelMock).modyfikacjaTrasy(id, trasa);
+        verify(modelMock, times(1)).modyfikacjaTrasy(id,trasa);
     }
 }

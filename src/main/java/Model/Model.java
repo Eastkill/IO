@@ -53,7 +53,8 @@ public class Model implements IModel {
 	}
 
 	public void modyfikacjaTrasy(int id,String trasa) {
-		dao.edytujTrase(id,trasa);
+		Widok.pokaż(this.getClass().getCanonicalName(), "modyfikacjaTrasy", true, "Model zleca edycję trasy w Inwentarzu");
+		inwentarz.zaktualizujTrase(id, trasa);
 	}
 
 	public void modyfikacjaRozkladu(String rozklad) {

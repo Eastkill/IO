@@ -99,7 +99,13 @@ public class DAO implements IDAO {
 
 	public int dodajTrase(String trasa) {
 		CSV csv = new CSV();
+		if (!csv.czyPoprawnyFormatTrasy(trasa)) {
+			throw new IllegalArgumentException("Błąd DAO: Niepoprawny format danych trasy CSV.");
+		}
 		int numer = csv.znajdźNrTrasy(trasa);
+		if (bazaTrasa.containsKey(numer)) {
+			throw new IllegalArgumentException("Błąd DAO: Trasa o ID " + numer + " już istnieje w bazie.");
+		}
 		String nazwa = csv.znajdźNazwęTrasy(trasa);
 		ArrayList<Integer> przystankki = csv.znajdźPrzystankiTrasy(trasa);
 		Widok.pokaż(this.getClass().getCanonicalName(), "dodajTrase",true, "DAO zapisze trasę w bazie danych");
@@ -110,7 +116,15 @@ public class DAO implements IDAO {
 	}
 
 	public void edytujTrase(int id, String trasa) {
-		Widok.pokaż(this.getClass().getCanonicalName(), "dodajTrase",true, "DAO zmodyfikuje trasę w bazie danych");
+		CSV csv = new CSV();
+		if (!csv.czyPoprawnyFormatTrasy(trasa)) {
+			throw new IllegalArgumentException("Błąd DAO: Niepoprawny format danych trasy CSV.");
+		}
+		if (!bazaTrasa.containsKey(id)) {
+			throw new IllegalArgumentException("Błąd DAO: Nie można edytować - Trasa o ID " + id + " nie istnieje.");
+		}
+		Widok.pokaż(this.getClass().getCanonicalName(), "edytujTrase", true, "DAO aktualizuje trasę nr " + id);
+		bazaTrasa.put(id, trasa);
 	}
 
 	public void usunTrase(int nrTrasy) {

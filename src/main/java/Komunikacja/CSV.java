@@ -172,6 +172,13 @@ public class CSV {
     // SEKCJA: TRASA (z listą przystanków)
     // ==========================================
 
+    public boolean czyPoprawnyFormatTrasy(String trasa) {
+        if (trasa == null || trasa.isEmpty()) {
+            return false;
+        }
+        return trasa.matches("^\\d+;[^;]+(;\\d+)+$");
+    }
+
     /**
      * Znalezienie numeru trasy.
      *
