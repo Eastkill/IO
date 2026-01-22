@@ -90,6 +90,7 @@ class TestTrasaMock {
     }
 
     @Test
+    @Tag("poprawny")
     @Order(3)
     @DisplayName("dodajPrzystanek() – poprawny typ")
     void testDodajPrzystanekPoprawny() {
@@ -105,6 +106,7 @@ class TestTrasaMock {
     }
 
     @Test
+    @Tag("niepoprawny")
     @Order(4)
     @DisplayName("dodajPrzystanek() – niepoprawny typ → wyjątek")
     void testDodajPrzystanekZlyTyp() {

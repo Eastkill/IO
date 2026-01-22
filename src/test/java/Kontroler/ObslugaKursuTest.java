@@ -53,6 +53,7 @@ public class ObslugaKursuTest {
     }
 
     @Test
+    @Tag("poprawny")
     @Order(1)
     @DisplayName("Poprawne ustawienie numeru kursu")
     void testGetNumerKursu() {
@@ -73,6 +74,7 @@ public class ObslugaKursuTest {
     }
 
     @Test
+    @Tag("poprawny")
     @Order(3)
     @DisplayName("Osiągnięcie przystanku – bez zakończenia kursu")
     void testOsiagnijPrzystanek() {
@@ -86,6 +88,7 @@ public class ObslugaKursuTest {
     }
 
     @Test
+    @Tag("poprawny")
     @Order(4)
     @DisplayName("Zgłoszenie incydentu niekończącego kursu")
     void testZglosIncydentNieKonczy() {
@@ -100,6 +103,7 @@ public class ObslugaKursuTest {
 
 
     @Test
+    @Tag("poprawny")
     @Order(5)
     @DisplayName("Zgłoszenie incydentu kończącego kurs")
     void testZglosIncydentKonczy() {
