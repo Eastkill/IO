@@ -6,7 +6,6 @@ import Komunikacja.Widok;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Vector;
 
 public class DAO implements IDAO {
 	private Map<Integer,String> bazaRozklad = new HashMap<>();
@@ -177,5 +176,14 @@ public class DAO implements IDAO {
 
 	public ArrayList<String> dajPrzystanki(){
         return new ArrayList<String>(bazaPrzystanek.values());
+	}
+
+	@Override
+	public String dajTrase(int id) {
+		try {
+			return bazaTrasa.get(id);
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }

@@ -6,19 +6,20 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DisplayName("Testy klasy KontrolerTras")
+@Tag("controller")
 public class KontrolerTrasTest {
+
     @Mock
     private IModel modelMock;
+
     @InjectMocks
     private KontrolerTras kontrolerTras;
 
@@ -26,70 +27,112 @@ public class KontrolerTrasTest {
     static void setUpBeforeClass() {
         System.out.println("Start testów KontrolerTras");
     }
+
     @AfterAll
     static void tearDownAfterClass() {
         System.out.println("Koniec testów KontrolerTras");
     }
-//    @BeforeEach
-//    void setUp() {
-//        System.out.println(" -> Przygotowanie pojedynczego testu");
-//    }
-//    @AfterEach
-//    void tearDown() {
-//        System.out.println(" -> Czyszczenie po teście");
-//    }
+
+    // ===================== DODAJ TRASĘ =====================
 
     @Test
-    @Tag("poprawny")
     @Order(1)
+    @Tag("poprawny")
     @DisplayName("Poprawnie dodaje trasę")
     void testPoprawnegoDodajTrase() {
-        //  Jeśli
+        // jeśli
         int id = 1;
         String trasa = "1;Testowa;10;20;30";
 
-        //  Gdy
-        kontrolerTras.dodajTrase(id, trasa);
+        // gdy
+        assertDoesNotThrow(() ->
+                kontrolerTras.dodajTrase(id, trasa)
+        );
 
-        //  Wtedy
-        InOrder inOrder = Mockito.inOrder(modelMock);
-        inOrder.verify(modelMock).dodanieTrasy(trasa);
+        // wtedy
         verify(modelMock, times(1)).dodanieTrasy(trasa);
     }
 
-//    @Test
-//    @Tag("niepoprawny")
-//    @Order(2)
-//    @DisplayName("Rzuca błąd przy dodawaniu trasy")
-//    void testBlednegoDodajTrase() {
-//        //  Jeśli
-//        int id = 1;
-//        String blednaTrasa = "To nie jest poprawny format";
-//
-//        //  Gdy
-//        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-//            kontrolerTras.dodajTrase(id, blednaTrasa);
-//        });
-//
-//        //  Wtedy
-//        verify(modelMock, times(1)).dodanieTrasy(blednaTrasa);
-//    }
+    // ===================== EDYTUJ TRASĘ =====================
 
     @Test
+    @Order(2)
     @Tag("poprawny")
-    @Order(3)
-    @DisplayName("weryfikacja edycji trasy")
-    void testEdytujTrase() {
-        //  Jeśli
+    @DisplayName("Poprawnie edytuje istniejącą trasę")
+    void testEdytujTrasePoprawnie() {
+        // jeśli
         int id = 1;
-        String trasa = "1;Edytowna;10;20;30";
+        String trasa = "1;Edytowana;10;20;30";
 
-        //  Gdy
-        kontrolerTras.edytujTrase(1, trasa);
+        when(modelMock.dajTrase(id)).thenReturn("ISTNIEJE");
 
-        //  Wtedy
-        InOrder inOrder = Mockito.inOrder(modelMock);
+        // gdy
+        assertDoesNotThrow(() ->
+                kontrolerTras.edytujTrase(id, trasa)
+        );
+
+        // wtedy
+        InOrder inOrder = inOrder(modelMock);
+        inOrder.verify(modelMock).dajTrase(id);
         inOrder.verify(modelMock).modyfikacjaTrasy(id, trasa);
-        verify(modelMock, times(1)).modyfikacjaTrasy(id,trasa);
+    }
+
+    @Test
+    @Order(3)
+    @Tag("niepoprawny")
+    @DisplayName("Rzuca wyjątek przy edycji nieistniejącej trasy")
+    void testEdytujTraseNieIstnieje() {
+        // jeśli
+        int id = 99;
+        String trasa = "Nowa";
+
+        when(modelMock.dajTrase(id)).thenReturn(null);
+
+        // gdy / wtedy
+        assertThrows(NullPointerException.class, () ->
+                kontrolerTras.edytujTrase(id, trasa)
+        );
+
+        verify(modelMock, never()).modyfikacjaTrasy(anyInt(), anyString());
+    }
+
+    // ===================== USUŃ TRASĘ =====================
+
+    @Test
+    @Order(4)
+    @Tag("poprawny")
+    @DisplayName("Poprawnie usuwa wiele tras")
+    void testUsunTrasePoprawnie() {
+        // jeśli
+        int[] trasy = {1, 2, 3};
+
+        when(modelMock.dajTrase(anyInt())).thenReturn("ISTNIEJE");
+
+        // gdy
+        assertDoesNotThrow(() ->
+                kontrolerTras.usunTrase(trasy)
+        );
+
+        // wtedy
+        verify(modelMock, times(3)).usuwanieTrasy(anyInt());
+    }
+
+    @Test
+    @Order(5)
+    @Tag("niepoprawny")
+    @DisplayName("Rzuca wyjątek gdy jedna z tras nie istnieje")
+    void testUsunTraseNieIstnieje() {
+        // jeśli
+        int[] trasy = {1, 2, 3};
+
+        when(modelMock.dajTrase(1)).thenReturn("OK");
+        when(modelMock.dajTrase(2)).thenReturn(null);
+
+        // gdy / wtedy
+        assertThrows(NullPointerException.class, () ->
+                kontrolerTras.usunTrase(trasy)
+        );
+
+        verify(modelMock, never()).usuwanieTrasy(3);
     }
 }

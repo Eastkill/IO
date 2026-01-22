@@ -102,4 +102,9 @@ public class Model implements IModel {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public String dajTrase(int id) {
+		return inwentarz.dajTrase(id);
+	}
+
 }

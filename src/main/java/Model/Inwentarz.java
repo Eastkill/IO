@@ -35,8 +35,8 @@ public class Inwentarz {
 		throw new UnsupportedOperationException();
 	}
 
-	public Trasa dajTrase(int nrTrasy) {
-		throw new UnsupportedOperationException();
+	public String dajTrase(int nrTrasy) {
+		return dao.dajTrase(nrTrasy);
 	}
 
 	public Rozklad dajRozklad(int nrRozkladu) {

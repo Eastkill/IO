@@ -44,4 +44,6 @@ public interface IModel {
 
 	public String[] dajPrzystanki(int nrKursu);
 
+	public String dajTrase(int id);
+
 }

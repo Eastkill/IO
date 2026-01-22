@@ -59,4 +59,5 @@ public interface IDAO {
 	public String znajdzIncydent(int nrIncydentu);
 	public void pokazTrasy();
 	public ArrayList<String> dajPrzystanki();
+	public String dajTrase(int id);
 }
