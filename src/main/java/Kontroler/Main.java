@@ -49,6 +49,7 @@ public class Main {
 		kontrolerZarzadcy.dodajTrase("10;wroclawianka;1;2;6");
 		dao.pokazTrasy();
 
-		kontrolerKierowcy = new KontrolerKierowcy();
+		kontrolerKierowcy = new KontrolerKierowcy(model);
+		kontrolerKierowcy.przyjmijKurs(1);
 	}
 }

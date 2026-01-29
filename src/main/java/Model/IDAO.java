@@ -60,4 +60,5 @@ public interface IDAO {
 	public void pokazTrasy();
 	public ArrayList<String> dajPrzystanki();
 	public String dajTrase(int id);
-}
+	public ArrayList<String> dajTrasy();
+	}

@@ -4,8 +4,8 @@ public interface IKontrolerKierowcy {
 
 	public void przyjmijKurs(int numerKursu);
 
-	public void osiagnijPrzystanek();
+	public boolean osiagnijPrzystanek();
 
-
+	public ObslugaKursu getObslugaKursu();
 	public void zglosIncydent(String text, boolean isEnding);
 }

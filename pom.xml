@@ -60,6 +60,14 @@
             <scope>test</scope>
         </dependency>
 
+
+        <!-- Source: https://mvnrepository.com/artifact/org.fitnesse/fitnesse -->
+        <dependency>
+            <groupId>org.fitnesse</groupId>
+            <artifactId>fitnesse</artifactId>
+            <version>20251025</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>

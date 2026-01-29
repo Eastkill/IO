@@ -167,7 +167,7 @@ public class DAO implements IDAO {
 	}
 
 	public int dodajIncydent(String incydent) {
-		throw new UnsupportedOperationException();
+		return 0;
 	}
 
 	public String znajdzIncydent(int nrIncydentu) {
@@ -176,6 +176,9 @@ public class DAO implements IDAO {
 
 	public ArrayList<String> dajPrzystanki(){
         return new ArrayList<String>(bazaPrzystanek.values());
+	}
+	public ArrayList<String> dajTrasy(){
+		return new ArrayList<String>(bazaTrasa.values());
 	}
 
 	@Override

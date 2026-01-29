@@ -99,12 +99,18 @@ public class Model implements IModel {
 	}
 
 	public String[] dajPrzystanki(int nrKursu) {
-		throw new UnsupportedOperationException();
+		String[] przystanki = new String[5];
+		przystanki[0] = "aa";
+		przystanki[1] = "bb";
+		przystanki[2] = "cc";
+		przystanki[3] = "dd";
+		przystanki[4] = "ee";
+		return przystanki;
 	}
 
 	@Override
 	public String dajTrase(int id) {
-		return inwentarz.dajTrase(id);
+		return inwentarz.dajTrase(id).opisz();
 	}
 
 }
