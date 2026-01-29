@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<suiteResults>
+  <FitNesseVersion>v20251025</FitNesseVersion>
+  <rootPath>FrontPage.AkceptacyjneMPK</rootPath>
+  <date>2026-01-28T19:25:19+01:00</date>
+  <pageHistoryLink>FrontPage.AkceptacyjneMPK?pageHistory&amp;resultDate=20260128192519</pageHistoryLink>
+  <executionLog>
+    <testSystem></testSystem>
+    <command></command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+    <exception>Cannot run program "C:\Users\Witol\Desktop\jdk-17.0.12\bin\java": CreateProcess error=2, Nie można odnaleźć określonego pliku</exception>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>30</totalRunTimeInMillis>
+</suiteResults>
+

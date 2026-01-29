@@ -1,0 +1,25 @@
+!3 Test przyjęcia kursu
+
+!|testyfitnesse.KontrolerKierowcyTest  |
+|numerKursu|przyjmijKurs?|dlugoscKursu?|
+|1         |true         |5            |
+|-1        |false        |5            |
+|2         |false        |5            |
+
+!3 Test osiągnięcia przystanku
+
+!|testyfitnesse.KontrolerKierowcyTest|
+|osiagnijPrzystanek()                |
+|true                                |
+|true                                |
+|true                                |
+|true                                |
+|true                                |
+|false                               |
+!3 Test zgłoszenia incydentu
+
+!|testyfitnesse.KontrolerKierowcyTest              |
+|tekstIncydentu     |czyKonczy|zglosIncydentKonczy?|
+|Awaria pojazdu     |true     |true                |
+|Opóźnienie 10 minut|false    |false               |
+|Wypadek na trasie  |true     |true                |

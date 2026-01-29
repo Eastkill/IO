@@ -1,0 +1,6 @@
+!|testyfitnesse.DodajTraseTest                                |
+|tekstTrasy           |dodajTrase?|liczbaTras?|czyTrasaDodana?|
+|2;Trasa Testowa;1;2;3|true       |2          |true           |
+|3;Kolejna Trasa;2;3;4|true       |3          |true           |
+|4;Trasa Nocna;1;3    |true       |4          |true           |
+|4;Trasa Fajna;1;3    |false      |4          |true           |

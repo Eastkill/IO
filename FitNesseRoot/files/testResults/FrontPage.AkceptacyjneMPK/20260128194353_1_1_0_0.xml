@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<suiteResults>
+  <FitNesseVersion>v20251025</FitNesseVersion>
+  <rootPath>FrontPage.AkceptacyjneMPK</rootPath>
+  <date>2026-01-28T19:43:53+01:00</date>
+  <pageHistoryLink>FrontPage.AkceptacyjneMPK?pageHistory&amp;resultDate=20260128194353</pageHistoryLink>
+  <pageHistoryReference>
+    <name>FrontPage.AkceptacyjneMPK.DodajTraseTest</name>
+    <date>2026-01-28T19:43:53+01:00</date>
+    <pageHistoryLink>FrontPage.AkceptacyjneMPK.DodajTraseTest?pageHistory&amp;resultDate=20260128194353</pageHistoryLink>
+    <counts>
+      <right>12</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>17</runTimeInMillis>
+  </pageHistoryReference>
+  <pageHistoryReference>
+    <name>FrontPage.AkceptacyjneMPK.EdytujTraseTest</name>
+    <date>2026-01-28T19:43:53+01:00</date>
+    <pageHistoryLink>FrontPage.AkceptacyjneMPK.EdytujTraseTest?pageHistory&amp;resultDate=20260128194353</pageHistoryLink>
+    <counts>
+      <right>1</right>
+      <wrong>3</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>5</runTimeInMillis>
+  </pageHistoryReference>
+  <executionLog>
+    <testSystem>fit:fit.FitServer</testSystem>
+    <command>"C:\Program Files\Java\jdk-21\bin\java" -cp target/classes;target/test-classes;C:\Users\Witol\Desktop\sem3-jp-lab-jn-master\IOllklk\fitnesse-standalone.jar fit.FitServer DESKTOP-S4GO11J 50651 3863</command>
+    <exitCode>3</exitCode>
+    <stdOut>{1=Model.Przystanek@3b764bce, 2=Model.Przystanek@759ebb3d, 3=Model.Przystanek@484b61fc, 4=Model.Przystanek@45fe3ee3}
+SetUp: Wszystkie komponenty zainicjalizowane pomy�lnie
+1
+2
+3
+2
+3
+4
+1
+3
+1
+3
+{1=Model.Przystanek@47089e5f, 2=Model.Przystanek@4141d797, 3=Model.Przystanek@68f7aae2, 4=Model.Przystanek@4f47d241}
+SetUp: Wszystkie komponenty zainicjalizowane pomy�lnie
+</stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>1</right>
+    <wrong>1</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>282</totalRunTimeInMillis>
+</suiteResults>
+

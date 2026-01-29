@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20251025</FitNesseVersion>
+  <rootPath>FrontPage.AkceptacyjneMPK.DodajTraseTest</rootPath>
+  <result>
+    <counts>
+      <right>6</right>
+      <wrong>3</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <date>2026-01-28T19:33:55+01:00</date>
+    <runTimeInMillis>116</runTimeInMillis>
+    <content>&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="FrontPage.AkceptacyjneMPK.SetUp"&gt;.FrontPage.AkceptacyjneMPK.SetUp&lt;/a&gt; &lt;a href="FrontPage.AkceptacyjneMPK.SetUp?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;div class="contents"&gt;
+	&lt;b&gt;Contents:&lt;/b&gt;
+	&lt;ul class="toc1"/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;testyfitnesse.SetUp&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td colspan="4"&gt;testyfitnesse.DodajTraseTest&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;tekstTrasy&lt;/td&gt;
+		&lt;td&gt;dodajTrase?&lt;/td&gt;
+		&lt;td&gt;liczbaTras?&lt;/td&gt;
+		&lt;td&gt;czyTrasaDodana?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;2;Trasa Testowa;1;2;3&lt;/td&gt;
+		&lt;td class="pass"&gt;true&lt;/td&gt;
+		&lt;td class="fail"&gt;2 &lt;span class="fit_label"&gt;expected&lt;/span&gt;&lt;hr&gt;1 &lt;span class="fit_label"&gt;actual&lt;/span&gt;&lt;/td&gt;
+		&lt;td class="pass"&gt;true&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;3;Kolejna Trasa;2;3;4&lt;/td&gt;
+		&lt;td class="pass"&gt;true&lt;/td&gt;
+		&lt;td class="fail"&gt;3 &lt;span class="fit_label"&gt;expected&lt;/span&gt;&lt;hr&gt;2 &lt;span class="fit_label"&gt;actual&lt;/span&gt;&lt;/td&gt;
+		&lt;td class="pass"&gt;true&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;4;Trasa Nocna;1;3&lt;/td&gt;
+		&lt;td class="pass"&gt;true&lt;/td&gt;
+		&lt;td class="fail"&gt;4 &lt;span class="fit_label"&gt;expected&lt;/span&gt;&lt;hr&gt;3 &lt;span class="fit_label"&gt;actual&lt;/span&gt;&lt;/td&gt;
+		&lt;td class="pass"&gt;true&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>DodajTraseTest</relativePageName>
+  </result>
+  <executionLog>
+    <testSystem>fit:fit.FitServer</testSystem>
+    <command>"C:\Program Files\Java\jdk-21\bin\java" -cp target/classes;target/test-classes;C:\Users\Witol\Desktop\sem3-jp-lab-jn-master\IOllklk\fitnesse-standalone.jar fit.FitServer DESKTOP-S4GO11J 52642 3863</command>
+    <exitCode>3</exitCode>
+    <stdOut>{1=Model.Przystanek@3b764bce, 2=Model.Przystanek@759ebb3d, 3=Model.Przystanek@484b61fc, 4=Model.Przystanek@45fe3ee3}
+SetUp: Wszystkie komponenty zainicjalizowane pomy�lnie
+1
+2
+3
+2
+3
+4
+1
+3
+</stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>1</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>462</totalRunTimeInMillis>
+</testResults>
+
